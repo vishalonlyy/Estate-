@@ -1,5 +1,7 @@
 "use client";
 
+import Group from "@/components/p/Group";
+import Part from "@/components/p/part";
 import Navbar from "@/components/Ui/Navbar";
 import { Building, Shield, Sprout, Home as H, Maximize } from "lucide-react";
 import React from "react";
@@ -46,7 +48,7 @@ export default function Home() {
 
       {/* Stats Section */}
 
-      <div className="pt-16 bg-[url('/i/c.png')] bg-cover bg-center bg-no-repeat 
+      {/* <div className="pt-16 bg-[url('/i/c.png')] bg-cover bg-center bg-no-repeat 
        text-black w-[100%] h-[500px] flex justify-center items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8">
@@ -58,10 +60,10 @@ export default function Home() {
             sophistication in every corner. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque labore, in eaque iusto culpa nesciunt ipsa provident sed porro et similique repellat pariatur eum omnis at. Iusto aliquid voluptatibus natus?
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Features Section */}
-      <div className="bg-emerald-800 text-white py-16">
+      <div className="bg-emerald-800 text-white py-16 mt-[150px] mb-[30px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
@@ -96,6 +98,34 @@ export default function Home() {
           </div>
         </div>
       </div>
+    
+    <Part/>
+
+    <div>
+      <div className="max-h-[70%]">
+      <img src="/img/building.png" alt="building" className="w-full h-full object-cover scale-[0.9]" />
+      </div>
+      <div className="bg-[#065f46] transform -translate-y-10 pb-3 rounded-b-3xl">
+            <h1 className="text-3xl font-bold text-center text-white py-8">Walk Through</h1>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <p className="text-center max-w-3xl mx-auto mb-16 text-white">
+                Luxury space is ready to give a lot of the lifestyle and comfort to
+                its residents. Experience the perfect blend of comfort and
+                sophistication in every corner. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque labore, in eaque iusto culpa nesciunt ipsa provident sed porro et similique repellat pariatur eum omnis at. Iusto aliquid voluptatibus natus?
+              </p>
+            <div/>
+      </div>
+      </div>
+    </div>
+
+    {/**Next */}
+    <div className="relative">
+      <div className="absolute inset-0 bg-[url('/img/mapbg.png')] bg-cover bg-center opacity-[0.9] blur-md"></div>
+      <img src='/img/map.png' alt='map' className='relative w-full h-full object-cover justify-self-center scale-[0.5]' />
+    </div>
+
+    {/**Group */}
+    <Group/>
     </main>
   );
 }
