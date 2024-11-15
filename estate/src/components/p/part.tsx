@@ -13,9 +13,9 @@ import Testimonials from './tes';
 
 const C1 = () => {
   const images = [
-    { id: 0, src: '/img/image.png' },
-    { id: 1, src: '/img/image.png' },
-    { id: 2, src: '/img/image.png' }
+    { id: 0, src: '/cos/a/1.jpg' },
+    { id: 1, src: '/cos/a/2.jpg' },
+    { id: 2, src: '/cos/a/3.jpg' }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,7 +29,7 @@ const C1 = () => {
   useEffect(() => {
     gsap.set(slidesRef.current, {
       opacity: 0,
-      scale: 0.8,
+      scale: 1,
       display: 'none'
     });
 
@@ -70,47 +70,30 @@ const C1 = () => {
   const animateSlide = (next: number, direction: 'left' | 'right') => {
     const current = slidesRef.current[currentSlide];
     const nextSlide = slidesRef.current[next];
-    const total = images.length;
     
-    // Calculate positions considering loop
-    const currentPos = direction === 'left' ? 100 : -100;
-    const nextStartPos = direction === 'left' ? -100 : 100;
-
-    // Setup timeline with loop handling
     const tl = gsap.timeline();
-
-    // Animate current slide out
+  
+    // Simple crossfade animation
     tl.to(current, {
       opacity: 0,
-      x: currentPos,
-      scale: 0.8,
-      duration: 0.5,
-      ease: 'power2.inOut',
-      onComplete: () => { 
+      duration: 0.8,
+      ease: "power1.inOut",
+      onComplete: () => {
         gsap.set(current, { 
-          display: 'none', 
-          x: 0,
-          scale: 0.8,
-          opacity: 0 
-        }); 
+          display: 'none'
+        });
       }
     })
-    // Prepare next slide
-    .set(nextSlide, { 
-      display: 'block', 
-      x: nextStartPos,
-      scale: 1.2,
-      opacity: 0 
-    }, 0)
-    // Animate next slide in
+    .set(nextSlide, {
+      display: 'block',
+      opacity: 0
+    })
     .to(nextSlide, {
       opacity: 1,
-      scale: 1,
-      x: 0,
-      duration: 0.5,
-      ease: 'power2.inOut'
-    }, 0.2);
-
+      duration: 0.8,
+      ease: "power1.inOut"
+    });
+  
     setCurrentSlide(next);
   };
 
@@ -134,9 +117,7 @@ const C1 = () => {
 <div 
   ref={containerRef} 
   className={`relative overflow-hidden w-full select-none
-    // Height adjustments
     h-[50vh] sm:h-screen
-    // Maintain aspect ratio
     aspect-[16/9] sm:aspect-auto
     ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
   onMouseDown={handleMouseDown}

@@ -63,11 +63,8 @@ export default function Footer() {
           <div className="md:w-[60%] text-center md:text-left md:pl-[200px]">
             <h3 className="text-lg font-bold mb-2 text-gray-800">RERA Details</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              RERA Registration: ABC123456
-              <br />
-              Valid until: December 2024
-              <br />
-              Compliant with Real Estate (Regulation and Development) Act, 2016
+            The Project has been registered via UP-RERA registration number: UPRERAPRJ103248/16/2024,RERA Collection A/c No- 9260002900000019 TEAM SHAURYA INFRAZONE PVT LTD,PUNJAB NATIONAL BANK, 2C/116, VRINDAVAN YOJNA, RAEBAREILLY ROAD, LUCKNOW,IFSC Code - PUNB0926000
+            It is available on the website https://up-rera.in/ under registered projects.
             </p>
           </div>
         </div>

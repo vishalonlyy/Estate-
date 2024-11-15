@@ -6,9 +6,9 @@ import { gsap } from 'gsap';
 
 const CenterCarousel = () => {
   const images = [
-    { id: 0, src: '/img/image.png' },
-    { id: 1, src: '/img/image.png' },
-    { id: 2, src: '/img/image.png' }
+    { id: 0, src: '/cos/a/1.jpg' },
+    { id: 1, src: '/cos/a/2.jpg' },
+    { id: 2, src: '/cos/a/3.jpg' }
   ];
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
@@ -117,7 +117,8 @@ const CenterCarousel = () => {
           <div
             key={image.id}
             ref={el => { slidesRef.current[index] = el; }}
-            className={`absolute w-[70%] sm:w-[80%] max-w-3xl aspect-video transition-all duration-300
+            className={`absolute w-[70%]
+               sm:w-[80%] max-w-4xl aspect-video transition-all duration-300
               ${index !== currentSlide ? 'cursor-pointer hover:opacity-80' : ''}`}
             onClick={() => handleSlideClick(index)}
           >
@@ -125,12 +126,13 @@ const CenterCarousel = () => {
               <img
                 src={image.src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg shadow-2xl shadow-gray-800"
+                className="w-full h-full aspect-auto
+                object-cover rounded-lg shadow-2xl shadow-gray-800"
                 draggable="false"
               />
                            <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] md:scale-[1]
                            xxsm:-translate-x-[30%] md:-translate-x-[30%] 
-                xxsm:-translate-y-[-50%] md:translate-y-[80%]
+                xxsm:-translate-y-[-50%] md:translate-y-[20%]
                 translate-y-[80%]
                 max-w-[200px] sm:max-w-[300px] md:max-w-[400px] p-4 sm:p-6 
                 bg-white/10 backdrop-blur-md

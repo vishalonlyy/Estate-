@@ -48,13 +48,20 @@ const Loc = () => {
       <div ref={containerRef} className="max-w-8xl mx-auto py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 items-center">
           <div className="w-full lg:w-[60%]">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img 
-                src="/loc.png" 
-                alt="location" 
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
+                        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0330127986156!2d80.9719289!3d26.7525181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ1JzA5LjEiTiA4MMKwNTgnMTkuMCJF!5e0!3m2!1sen!2sin!4v1635774149453"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{
+                  filter: 'grayscale(0.2)',
+                  transform: 'scale(1)',
+                  transition: 'transform 700ms'
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
             </div>
           </div>
           <div className="w-full lg:w-[40%] content space-y-4 sm:space-y-6">
@@ -66,9 +73,11 @@ const Loc = () => {
               At The Heart of Modern Lucknow
             </h1>
             <p className="text-gray-600 leading-relaxed">
-              Strategically located in the most prestigious neighborhood, 
-              offering unparalleled access to the city&apos;s finest amenities 
-              while maintaining the serenity of a private sanctuary.
+            Hazaratganj - 9 kms
+Charbagh Railway Station - 12 kms
+Gomti Nagar Railway Station - 7 kms
+Shaheed Path 1.5 kms
+S.G.P.G.I. 1.5 kms
             </p>
             <button
               ref={buttonRef}

@@ -56,6 +56,18 @@ const Group = () => {
 
    return (
     <div className="relative mb-[10%]">
+          <div className="about-section max-w-7xl mx-auto px-4 py-16 sm:py-24">
+            <h2 className="about-title text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+              About Us
+            </h2>
+            <p className="about-text text-base xxsm:text-sm sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto text-center leading-relaxed">
+              Founded by a team of young and dynamic entrepreneurs with over 20 years of combined experience, 
+              our company is built on a foundation of quality, trust, and commitment. We bring a fresh 
+              perspective to the real estate industry, combining innovative ideas with a deep understanding 
+              of the market. Our focus is on delivering high-quality residential, commercial, and industrial 
+              projects that meet the evolving needs of modern buyers and investors.
+            </p>
+          </div>
       <div className="relative h-[100%] w-full">
         <img
           src="/img/b2.png"
@@ -71,7 +83,7 @@ const Group = () => {
                   key={card.id}
                   ref={el => { cardsRef.current[index] = el; }}
                   className="backdrop-blur-xl bg-gray-900/40 p-4 sm:p-6 md:p-8 rounded-xl
-                  xxsm:scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.8]
+                  xxsm:scale-[0.9] sm:scale-[0.8] md:scale-[1] lg:scale-[1]
                     border border-gray-900/20 shadow-2xl transform 
                     transition-all duration-300 hover:bg-white/20
                     hover:scale-105"

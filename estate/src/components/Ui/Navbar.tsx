@@ -10,6 +10,52 @@ function Navbar() {
   const navRef = useRef(null);
   const tlRef = useRef<gsap.core.Timeline>();
   const mobileMenuRef = useRef(null);
+  /**
+   * Home
+Features
+Location 
+Photo gallery 
+Walkthrough 
+Site plan
+About us
+   */
+  const Links = [
+    {
+      id: 1,
+      name: "Home",
+      url: "#",
+    },
+    {
+      id: 2,
+      name: "Features",
+      url: "#",
+    },
+    {
+      id: 3,
+      name: "Location",
+      url: "#",
+    },
+    {
+      id: 4,
+      name: "Photo Gallery",
+      url: "#",
+    },
+    {
+      id: 5,
+      name: "Walkthrough",
+      url: "#",
+    },
+    {
+      id: 6,
+      name: "Site Plan",
+      url: "#",
+    },
+    {
+      id: 7,
+      name: "About Us",
+      url: "#",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,10 +125,14 @@ function Navbar() {
             <div className="block">
   {isScrolled ? (
     <div className="hidden md:flex space-x-8">
-      <a href="#" className="hover:text-emerald-600 transition-colors">Home</a>
+      {/* <a href="#" className="hover:text-emerald-600 transition-colors">Home</a>
       <a href="#" className="hover:text-emerald-600 transition-colors">Features</a>
       <a href="#" className="hover:text-emerald-600 transition-colors">About</a>
-      <a href="#" className="hover:text-emerald-600 transition-colors">Contact</a>
+      <a href="#" className="hover:text-emerald-600 transition-colors">Contact</a> */}
+      {Links.map((link) => (
+        <a key={link.id} href
+        ={link.url} className="hover:text-emerald-600 transition-colors">{link.name}</a>
+      ))}
     </div>
   ) : (
     <h1 className="text-base md:text-xl font-bold text-emerald-700 font-sans tracking-wider justify-self-center
@@ -133,10 +183,10 @@ function Navbar() {
         className="fixed top-[60px] h-full left-0 w-full bg-white z-40 transform -translate-y-full shadow-lg md:hidden"
       >
         <div className="p-4 space-y-4 text-gray-700">
-          <a href="#" className="block py-2 hover:text-emerald-600 transition-colors">Home</a>
-          <a href="#" className="block py-2 hover:text-emerald-600 transition-colors">Features</a>
-          <a href="#" className="block py-2 hover:text-emerald-600 transition-colors">About</a>
-          <a href="#" className="block py-2 hover:text-emerald-600 transition-colors">Contact</a>
+          {Links.map((link) => (
+            <a key={link.id} href
+            ={link.url} className="hover:text-emerald-600 transition-colors">{link.name}</a>
+          ))}
           <div className="pt-4 flex flex-col space-y-4">
             <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
               Enquiry Now
