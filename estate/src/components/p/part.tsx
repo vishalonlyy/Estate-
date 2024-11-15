@@ -131,33 +131,37 @@ const C1 = () => {
   }, [currentSlide]); // Add currentSlide as dependency
 
   return (
-    <div 
-      ref={containerRef} 
-      className={`relative overflow-hidden h-screen w-full select-none
-        ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
+<div 
+  ref={containerRef} 
+  className={`relative overflow-hidden w-full select-none
+    // Height adjustments
+    h-[50vh] sm:h-screen
+    // Maintain aspect ratio
+    aspect-[16/9] sm:aspect-auto
+    ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+  onMouseDown={handleMouseDown}
+  onMouseMove={handleMouseMove}
+  onMouseUp={handleMouseUp}
+  onMouseLeave={handleMouseUp}
+>
+  {/* Slides */}
+  {images.map((image, index) => (
+    <div
+      key={image.id}
+      ref={el => { slidesRef.current[index] = el }}
+      className="absolute inset-0 w-full h-full"
     >
-      {/* Slides */}
-      {images.map((image, index) => (
-        <div
-          key={image.id}
-          ref={el => { slidesRef.current[index] = el }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <Image
-            src={image.src}
-            alt={`Slide ${index + 1}`}
-            fill
-            className="object-cover"
-            priority={index === 0}
-            draggable="false"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
-        </div>
-      ))}
+      <Image
+        src={image.src}
+        alt={`Slide ${index + 1}`}
+        fill
+        className="object-contain sm:object-cover" // Changed to contain on mobile
+        priority={index === 0}
+        draggable="false"
+      />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" /> */}
+    </div>
+  ))}
   
       <div className="absolute z-10 inset-x-4 top-1/2 -translate-y-1/2 flex justify-between">
         <button

@@ -66,13 +66,13 @@ export default function Home() {
       <Navbar />
       {/* Hero Section */}
       <div className="relative xxsm:h-[200px] sm:h-[500px] md:h-[480px] w-full bg-black">
-        <div className="h-[100%] xxsm:scale-y-[2]  bg-black overflow-hidden">
+        <div className="h-[100%] xxsm:scale-y-[2] md:scale-[1] md:scale-x-[1.4]  bg-black overflow-hidden">
           <ImageSection />
         </div>
 
         <div className="absolute inset-0 bg-black/10" />
 
-                <div className="w-full transform xxsm:translate-y-[200px] md:translate-y-[130px] absolute bottom-0">
+        <div className="w-full transform xxsm:translate-y-[200px] md:translate-y-[130px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
             <div className="block md:hidden overflow-hidden whitespace-nowrap">
