@@ -128,10 +128,11 @@ const CenterCarousel = () => {
                 className="w-full h-full object-cover rounded-lg shadow-2xl shadow-gray-800"
                 draggable="false"
               />
-                           <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] xxsm:-translate-x-[30%] md:-translate-x-[30%] 
+                           <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] md:scale-[1]
+                           xxsm:-translate-x-[30%] md:-translate-x-[30%] 
                 xxsm:-translate-y-[-50%] md:translate-y-[80%]
                 translate-y-[80%]
-                max-w-[200px] sm:max-w-[300px] p-4 sm:p-6 
+                max-w-[200px] sm:max-w-[300px] md:max-w-[400px] p-4 sm:p-6 
                 bg-white/10 backdrop-blur-md
                 rounded-xl 
                 border border-white/20
@@ -139,8 +140,8 @@ const CenterCarousel = () => {
                 transform transition-all duration-300
                 hover:bg-white/20
                 before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl">
-                <h2 className="relative text-white text-xl sm:text-2xl font-bold mb-2">Buy a House</h2>
-                <p className="relative text-white/80 text-xs sm:text-sm max-w-md">
+                <h2 className="relative text-gray-800 text-xl sm:text-2xl font-bold mb-2">Buy a House</h2>
+                <p className="relative text-gray-900/80 text-xs sm:text-sm max-w-md">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
                 </p>
               </div>
