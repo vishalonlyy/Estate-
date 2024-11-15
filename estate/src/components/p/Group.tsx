@@ -54,31 +54,32 @@ const Group = () => {
 
   }, []);
 
-  return (
+   return (
     <div className="relative mb-[10%]">
       <div className="relative h-[100%] w-full">
         <img
           src="/img/b2.png"
           alt="Hero"
-          className="w-full h-[700px] scale-x-[1.3] object-contain object-center"
+          className="w-full xxsm:h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] scale-x-[1.3] object-contain object-center"
         />
-
-        <div className="cards-container absolute bottom-0 transform translate-y-[80px] w-full px-4 mx-auto z-10">
+  
+        <div className="cards-container absolute bottom-0 transform xxsm:translate-y-[90px] sm:translate-y-[60px] md:translate-y-[80px] w-full px-4 mx-auto z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 xxsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {cardData.map((card, index) => (
                 <div
                   key={card.id}
                   ref={el => { cardsRef.current[index] = el; }}
-                  className="backdrop-blur-xl bg-gray-900/40 p-8 rounded-xl
+                  className="backdrop-blur-xl bg-gray-900/40 p-4 sm:p-6 md:p-8 rounded-xl
+                  xxsm:scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.8]
                     border border-gray-900/20 shadow-2xl transform 
                     transition-all duration-300 hover:bg-white/20
                     hover:scale-105"
                 >
-                  <h3 className="text-4xl font-bold text-white mb-4">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
                     {card.number}
                   </h3>
-                  <p className="text-white/90 text-sm font-medium">
+                  <p className="text-white/90 text-xs sm:text-sm font-medium">
                     {card.description}
                   </p>
                 </div>
@@ -90,5 +91,4 @@ const Group = () => {
     </div>
   );
 };
-
 export default Group;

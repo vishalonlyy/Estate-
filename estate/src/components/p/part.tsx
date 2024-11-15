@@ -156,34 +156,32 @@ const C1 = () => {
             draggable="false"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
-
         </div>
       ))}
-
-
+  
       <div className="absolute z-10 inset-x-4 top-1/2 -translate-y-1/2 flex justify-between">
         <button
           onClick={handlePrev}
-          className="p-3 rounded-full bg-white/10 backdrop-blur-sm 
+          className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm 
             hover:bg-white/20 transition-all duration-300"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
         </button>
         <button
           onClick={handleNext}
-          className="p-3 rounded-full bg-white/10 backdrop-blur-sm 
+          className="p-2 sm:p-3 rounded-full bg-white/10 backdrop-blur-sm 
             hover:bg-white/20 transition-all duration-300"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
         </button>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="flex space-x-2">
+  
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <div className="flex space-x-1 sm:space-x-2">
           {images.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-colors 
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors 
                 ${currentSlide === index ? 'bg-white' : 'bg-white/50'}`}
               onClick={() => animateSlide(index, index > currentSlide ? 'left' : 'right')}
             />

@@ -44,43 +44,43 @@ const Loc = () => {
         }, containerRef);
         return () => ctx.revert();
     }, []);
-    return (
-        <div ref={containerRef} className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
-                <div className="lg:w-[60%]">
-                    <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                        <img 
-                            src="/loc.png" 
-                            alt="location" 
-                            className="w-full h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                    </div>
-                </div>
-                <div className="lg:w-[40%] content space-y-6">
-                    <div className="flex items-center space-x-2 text-emerald-600">
-                        <MapPin className="w-5 h-5" />
-                        <span className="font-medium">Prime Location</span>
-                    </div>
-                    <h1 className="text-3xl md:text-4xl font-bold leading-tight text-black">
-                        At The Heart of Modern Lucknow
-                    </h1>
-                    <p className="text-gray-600 leading-relaxed">
-                        Strategically located in the most prestigious neighborhood, 
-                        offering unparalleled access to the city&apos;s finest amenities 
-                        while maintaining the serenity of a private sanctuary.
-                    </p>
-                    <button
-                        ref={buttonRef}
-                        className="group flex items-center space-x-2 bg-emerald-600 text-white px-6 py-3 
-                            rounded-full hover:bg-emerald-700 transition-colors duration-300"
-                    >
-                        <span>View Location</span>
-                        <ArrowRight className="w-4 h-4 arrow transition-transform" />
-                    </button>
-                </div>
+        return (
+      <div ref={containerRef} className="max-w-8xl mx-auto py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 items-center">
+          <div className="w-full lg:w-[60%]">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img 
+                src="/loc.png" 
+                alt="location" 
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
+          </div>
+          <div className="w-full lg:w-[40%] content space-y-4 sm:space-y-6">
+            <div className="flex items-center space-x-2 text-emerald-600">
+              <MapPin className="w-5 h-5" />
+              <span className="font-medium">Prime Location</span>
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black">
+              At The Heart of Modern Lucknow
+            </h1>
+            <p className="text-gray-600 leading-relaxed">
+              Strategically located in the most prestigious neighborhood, 
+              offering unparalleled access to the city&apos;s finest amenities 
+              while maintaining the serenity of a private sanctuary.
+            </p>
+            <button
+              ref={buttonRef}
+              className="group flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 sm:px-6 sm:py-3 
+                  rounded-full hover:bg-emerald-700 transition-colors duration-300"
+            >
+              <span>View Location</span>
+              <ArrowRight className="w-4 h-4 arrow transition-transform" />
+            </button>
+          </div>
         </div>
+      </div>
     );
 };
 export default Loc;
