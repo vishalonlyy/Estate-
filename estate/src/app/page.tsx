@@ -71,16 +71,43 @@ export default function Home() {
     <main className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       {/* Hero Section */}
-      <div className="relative h-[480px] w-full bg-black">
+      <div className="relative xxsm:h-[330px] sm:h-[500px] md:h-[480px] w-full bg-black">
         <div className="h-[100%] bg-black overflow-hidden">
           <ImageSection />
         </div>
 
         <div className="absolute inset-0 bg-black/10" />
 
-               <div className="w-full transform translate-y-[130px] absolute bottom-0">
+                <div className="w-full transform translate-y-[130px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
+            {/* Marquee for mobile */}
+            <div className="block md:hidden overflow-hidden whitespace-nowrap">
+              <div className="animate-marquee inline-flex gap-4">
+                {[...Array(2)].map((_, arrayIndex) => (
+                  <div key={arrayIndex} className="inline-flex gap-4">
+                    {[
+                      { value: "03", label: "BHK" },
+                      { value: "168", label: "Residential Units" },
+                      { value: "2.5", label: "BHK" },
+                    ].map((stat, index) => (
+                      <div
+                        key={index}
+                        className="inline-flex flex-col p-4 transition-shadow z-10 shadow-gray 
+                          shadow-lg hover:shadow-xl rounded-b-md bg-white min-w-[200px]"
+                      >
+                        <div className="text-2xl font-bold text-emerald-800">
+                          {stat.value}
+                        </div>
+                        <div className="text-sm text-gray-600 mt-2">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+        
+            {/* Grid for desktop */}
+            <div className="hidden md:grid grid-cols-3 gap-6 md:gap-8 text-center">
               {[
                 { value: "03", label: "BHK" },
                 { value: "168", label: "Residential Units" },
@@ -106,7 +133,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-                <div className="bg-emerald-800 text-white py-16 mt-[150px] mb-[30px]">
+            <div className="bg-emerald-800 text-white py-16 mt-[150px] mb-[30px]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
                   {[

@@ -43,6 +43,15 @@ const CenterCarousel = () => {
     updateSlidesPosition(currentSlide);
   }, []);
 
+  /**Chnage slide every 3 sec */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      animateSlides('right');
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+    
+
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     setStartX(e.pageX);
@@ -108,7 +117,7 @@ const CenterCarousel = () => {
           <div
             key={image.id}
             ref={el => { slidesRef.current[index] = el; }}
-            className={`absolute w-[90%] sm:w-[80%] max-w-3xl aspect-video transition-all duration-300
+            className={`absolute w-[70%] sm:w-[80%] max-w-3xl aspect-video transition-all duration-300
               ${index !== currentSlide ? 'cursor-pointer hover:opacity-80' : ''}`}
             onClick={() => handleSlideClick(index)}
           >
@@ -119,7 +128,9 @@ const CenterCarousel = () => {
                 className="w-full h-full object-cover rounded-lg shadow-2xl shadow-gray-800"
                 draggable="false"
               />
-              <div className="absolute bottom-0 left-0 -translate-x-[30%] translate-y-[80%]
+              <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] xxsm:-translate-x-[30%] md:-translate-x-[30%] 
+              xxsm:-translate-y-[-50%] md:translate-y-[80%]
+              translate-y-[80%]
                 max-w-[200px] sm:max-w-[300px] p-4 sm:p-6 backdrop-blur-lg bg-white rounded-xl 
                 border border-gray-900/20 shadow-lg transform transition-all duration-300
                 hover:bg-white/20">
