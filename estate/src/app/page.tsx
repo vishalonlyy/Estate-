@@ -157,11 +157,12 @@ export default function Home() {
 const videoId = "1KtK5iMGb4DomdtAML2xLgevp5nBvXw-z";
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden">
+    <main className="min-h-screen bg-white overflow-hidden relative">
       <Navbar />
       <ImageSection/>
-    <div className="w-full xxsm:scale-x-[1.2] md:scale-x-[1] transform xxsm:-translate-y-[150px]
-         md:-translate-y-[0px] absolute bottom-0">
+    <div className="w-full absolute xxsm:top-[350px] md:top-[600px] z-10 xxsm:scale-x-[1.2] xsm:scale-[1.1] md:scale-x-[1] transform 
+
+         md:-translate-y-[0px]  ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
             <div className="block md:hidden overflow-hidden whitespace-nowrap">
