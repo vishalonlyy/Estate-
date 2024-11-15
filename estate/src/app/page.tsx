@@ -66,13 +66,13 @@ export default function Home() {
       <Navbar />
       {/* Hero Section */}
       <div className="relative xxsm:h-[200px] sm:h-[500px] md:h-[480px] w-full bg-black">
-        <div className="h-[100%] xxsm:scale-y-[1.4]  bg-black overflow-hidden">
+        <div className="h-[100%] xxsm:scale-y-[2]  bg-black overflow-hidden">
           <ImageSection />
         </div>
 
         <div className="absolute inset-0 bg-black/10" />
 
-                <div className="w-full transform xxsm:translate-y-[140px] md:translate-y-[130px] absolute bottom-0">
+                <div className="w-full transform xxsm:translate-y-[200px] md:translate-y-[130px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
             <div className="block md:hidden overflow-hidden whitespace-nowrap">
@@ -127,7 +127,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-            <div className="bg-emerald-800 text-white py-16 xxsm:mt-[150px] md:mt-[150px] mb-[30px]">
+            <div className="bg-emerald-800 text-white py-16 xxsm:mt-[200px] md:mt-[150px] mb-[30px]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
                   {[
