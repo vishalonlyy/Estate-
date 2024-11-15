@@ -72,7 +72,8 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/10" />
 
-        <div className="w-full transform xxsm:translate-y-[200px] md:translate-y-[130px] absolute bottom-0">
+        <div className="w-full xxsm:scale-x-[1.2] md:scale-x-[1] transform xxsm:translate-y-[180px]
+         md:translate-y-[100px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
             <div className="block md:hidden overflow-hidden whitespace-nowrap">
