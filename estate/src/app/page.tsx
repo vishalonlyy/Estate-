@@ -160,7 +160,7 @@ const videoId = "1KtK5iMGb4DomdtAML2xLgevp5nBvXw-z";
     <main className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       <ImageSection/>
-    <div className="w-full xxsm:scale-x-[1.2] md:scale-x-[1] transform xxsm:-translate-y-[90px]
+    <div className="w-full xxsm:scale-x-[1.2] md:scale-x-[1] transform xxsm:-translate-y-[150px]
          md:-translate-y-[0px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
