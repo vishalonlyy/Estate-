@@ -7,59 +7,53 @@ import Testimonials from "@/components/p/tes";
 import Footer from "@/components/Ui/Footer";
 import Navbar from "@/components/Ui/Navbar";
 import { Building, Shield, Sprout, Home as H, Maximize } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const ImageSection = () => {
-  const img1Ref = useRef(null);
-  const img2Ref = useRef(null);
+  const imageRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const images = [
+    "/i/b.png",
+    "https://www.imperialresidencia.com/img/Elevation%20(2).jpg"
+  ];
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      defaults: {
-        ease: 'power3.out',
-        duration: 1
-      }
-    });
-
-    tl.fromTo(img1Ref.current,
+    const tl = gsap.timeline();
+    
+    // Fade animation
+    tl.fromTo(imageRef.current,
       { 
         opacity: 0,
-        x: -100,
+        scale: 1.1
       },
       {
         opacity: 1,
-        x: 0,
+        scale: 1,
+        duration: 1,
+        ease: 'power2.out'
       }
-    ).fromTo(img2Ref.current,
-      {
-        opacity: 0,
-        x: 100,
-      },
-      {
-        opacity: 1,
-        x: 0,
-      },
-      '-=0.5' // Overlap with previous animation
     );
-  }, []);
+
+    // Auto advance timer
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <div className="flex flex-col md:flex-row justify-center items-center mt-[60px]">
+    <div className="relative w-full  overflow-hidden">
+      <div className="flex justify-center items-center mt-[60px]">
         <img
-          ref={img1Ref}
-          src="/i/b.png"
+          ref={imageRef}
+          src={images[currentIndex]}
           alt="Apartment exterior"
-          className="w-full md:w-1/2 h-[100%] object-contain scale-y-[1.4] shadow-lg"
-        />
-        <img 
-          ref={img2Ref}
-          src="https://www.imperialresidencia.com/img/Elevation%20(2).jpg"
-          alt="Apartment exterior"
-          className="w-full md:w-1/2 h-[100%] object-contain scale-y-[1.3] shadow-lg"
+          className="w-full md:w-[80%] h-full object-contain ]  shadow-lg"
         />
       </div>
     </div>
@@ -71,14 +65,14 @@ export default function Home() {
     <main className="min-h-screen bg-white overflow-hidden">
       <Navbar />
       {/* Hero Section */}
-      <div className="relative xxsm:h-[330px] sm:h-[500px] md:h-[480px] w-full bg-black">
+      <div className="relative xxsm:h-[200px] sm:h-[500px] md:h-[480px] w-full bg-black">
         <div className="h-[100%] bg-black overflow-hidden">
           <ImageSection />
         </div>
 
         <div className="absolute inset-0 bg-black/10" />
 
-                <div className="w-full transform translate-y-[130px] absolute bottom-0">
+                <div className="w-full transform xxsm:translate-y-[100px] md:translate-y-[130px] absolute bottom-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Marquee for mobile */}
             <div className="block md:hidden overflow-hidden whitespace-nowrap">
@@ -133,7 +127,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-            <div className="bg-emerald-800 text-white py-16 mt-[150px] mb-[30px]">
+            <div className="bg-emerald-800 text-white py-16 xxsm:mt-[130px] md:mt-[150px] mb-[30px]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
                   {[
