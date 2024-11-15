@@ -9,6 +9,7 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import Loc from './Loc';
 // import Cos from './cos';
 import CenterCarousel from './cos';
+import Testimonials from './tes';
 
 const C1 = () => {
   const images = [
@@ -199,7 +200,8 @@ const C1 = () => {
 
 const Part = () => {
     return (
-        <><C1 /><Loc /><CenterCarousel/></>
+        <><C1 /><Loc /><CenterCarousel/>
+        </>
     );
     }
 export default Part;

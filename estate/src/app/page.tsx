@@ -2,6 +2,8 @@
 
 import Group from "@/components/p/Group";
 import Part from "@/components/p/part";
+import Testimonials from "@/components/p/tes";
+import Footer from "@/components/Ui/Footer";
 import Navbar from "@/components/Ui/Navbar";
 import { Building, Shield, Sprout, Home as H, Maximize } from "lucide-react";
 import React from "react";
@@ -126,6 +128,8 @@ export default function Home() {
 
     {/**Group */}
     <Group/>
+    <Testimonials/>
+    <Footer/>
     </main>
   );
 }
