@@ -114,7 +114,7 @@ const C1 = () => {
   }, [currentSlide]); // Add currentSlide as dependency
 
   return (
-<div 
+<div id="gallery"
   ref={containerRef} 
   className={`relative overflow-hidden w-full select-none
     h-[50vh] sm:h-screen

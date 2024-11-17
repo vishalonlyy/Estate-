@@ -163,7 +163,7 @@ const Features = () => {
 
 const Combined_Exclusive_Features = () => {
   return (
-    <div className="mt-[20px] bg-[url('/i/c.png')] 
+    <div id="features" className="mt-[20px] bg-[url('/i/c.png')] 
         bg-cover 
         bg-center 
         bg-no-repeat">
@@ -308,7 +308,8 @@ const videoId = "1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U";
 // https://drive.google.com/file/d/1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U/view?usp=drivesdk
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden relative">
+    <main id="home"
+     className="min-h-screen bg-white overflow-hidden relative">
       {/**Forms */}
       <div>
         <BrochureForm isOpen={isOpen} onClose={() => setISOpen(false)} />
@@ -380,8 +381,8 @@ const videoId = "1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U";
     {/* <Features/> */}
       {/* Features Section */}
       <Part />
-      <div>
-      <div className="bg-[#065f46] transform md:translate-y-16 rounded-t-3xl pb-3">
+      <div id="walkthrough">
+      <div  className="bg-[#065f46] transform md:translate-y-16 rounded-t-3xl pb-3">
           <h1 className="text-2xl xxsm:text-2xl sm:text-3xl font-bold text-center text-white py-2 sm:py-8">Walk Through</h1>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 text-white text-xs sm:text-base md:text-lg">

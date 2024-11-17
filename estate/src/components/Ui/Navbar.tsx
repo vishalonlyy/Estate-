@@ -15,52 +15,67 @@ function Navbar() {
   const tlRef = useRef<gsap.core.Timeline>();
   const mobileMenuRef = useRef(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
-  /**
-   * Home
-Features
-Location 
-Photo gallery 
-Walkthrough 
-Site plan
-About us
-   */
-  const Links = [
+  interface NavLink {
+    id: number;
+    name: string;
+    sectionId: string; // Added for scroll targeting
+  }
+  
+  const Links: NavLink[] = [
     {
       id: 1,
       name: "Home",
-      url: "#",
+      sectionId: "home",
     },
     {
       id: 2,
       name: "Features",
-      url: "#",
+      sectionId: "features",
     },
     {
       id: 3,
       name: "Location",
-      url: "#",
+      sectionId: "location",
     },
     {
       id: 4,
       name: "Photo Gallery",
-      url: "#",
+      sectionId: "gallery",
     },
     {
       id: 5,
       name: "Walkthrough",
-      url: "#",
+      sectionId: "walkthrough",
     },
     {
       id: 6,
       name: "Site Plan",
-      url: "#",
+      sectionId: "siteplan",
     },
     {
       id: 7,
       name: "About Us",
-      url: "#",
+      sectionId: "about",
     },
   ];
+  const handleScroll = (sectionId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Update URL with hash
+      window.history.pushState({}, '', `#${sectionId}`);
+      
+      // Smooth scroll to element
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      console.warn(`Section with id "${sectionId}" not found`);
+    }
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -227,9 +242,15 @@ About us
       <a href="#" className="hover:text-emerald-600 transition-colors">About</a>
       <a href="#" className="hover:text-emerald-600 transition-colors">Contact</a> */}
       {Links.map((link) => (
-        <a key={link.id} href
-        ={link.url} className="hover:text-emerald-600 transition-colors">{link.name}</a>
-      ))}
+  <a 
+    key={link.id} 
+    href={`#${link.sectionId}`}
+    onClick={handleScroll(link.sectionId)}
+    className="hover:text-emerald-600 transition-colors"
+  >
+    {link.name}
+  </a>
+))}
     </div>
   ) : (
     <h1 className="text-base md:text-xl font-bold text-emerald-700 font-sans tracking-wider justify-self-center
@@ -285,9 +306,15 @@ About us
         <div className="p-4 space-y-4 text-gray-700">
           <div className="flex flex-col gap-4  items-center">
           {Links.map((link) => (
-            <a key={link.id} href
-            ={link.url} className="hover:text-emerald-600 transition-colors">{link.name}</a>
-          ))}
+  <a 
+    key={link.id} 
+    href={`#${link.sectionId}`}
+    onClick={handleScroll(link.sectionId)}
+    className="hover:text-emerald-600 transition-colors"
+  >
+    {link.name}
+  </a>
+))}
           </div>
           <div className="pt-4 flex flex-col space-y-4">
             <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">

@@ -45,7 +45,8 @@ const Loc = () => {
         return () => ctx.revert();
     }, []);
         return (
-      <div ref={containerRef} className="max-w-8xl mx-auto py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div id='location'
+       ref={containerRef} className="max-w-8xl mx-auto py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 items-center">
           <div className="w-full lg:w-[60%]">
                         <div className="relative overflow-hidden rounded-2xl shadow-2xl">

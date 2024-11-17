@@ -56,7 +56,7 @@ const Group = () => {
 
    return (
     <div className="relative mb-[10%]">
-                    <div className="about-section  relative md:max-w-7xl mx-auto px-4 py-16 sm:py-24 overflow-hidden">
+                    <div id="about" className="about-section  relative md:max-w-7xl mx-auto px-4 py-16 sm:py-24 overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute inset-0 opacity-5 ">
               <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />

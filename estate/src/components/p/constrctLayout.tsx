@@ -27,7 +27,8 @@ export default function ConstrctLayout() {
     );
 
     return (
-        <div className="relative mx-auto px-4 py-8">
+        <div id="siteplan"
+        className="relative mx-auto px-4 py-8">
             {/* Background */}
             <div className="absolute inset-0 bg-[url('/img/Mapbg.jpg')] bg-cover
              bg-center opacity-[1]
