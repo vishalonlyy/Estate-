@@ -57,7 +57,7 @@ export default function ConstrctLayout() {
                         className={`pb-2 px-4 text-lg font-medium transition-all duration-300 relative
                             ${activeTab === 'floorplan' ? 'text-emerald-600' : 'text-white hover:text-gray-800'}`}
                     >
-                        Floor Plan
+                        Cluster
                         <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-emerald-600 transition-transform duration-300
                             ${activeTab === 'floorplan' ? 'scale-x-100' : 'scale-x-0'}`}
                         />
