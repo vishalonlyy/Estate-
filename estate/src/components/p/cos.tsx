@@ -6,9 +6,10 @@ import { gsap } from 'gsap';
 
 const CenterCarousel = () => {
   const images = [
-    { id: 0, src: '/cos/a/1.jpg' },
-    { id: 1, src: '/cos/a/2.jpg' },
-    { id: 2, src: '/cos/a/3.jpg' }
+    { id: 0, src: '/cos/b/1.jpg' },
+    { id: 1, src: '/cos/b/2.jpg' },
+    { id: 2, src: '/cos/b/3.jpg' },
+    { id: 3, src: '/cos/b/4.jpg' },
   ];
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
@@ -104,7 +105,7 @@ const CenterCarousel = () => {
 
   return (
     <div 
-      ref={containerRef}
+      ref={containerRef} id="gallery"
       className={`relative xxsm:h-[60vh] md:h-screen w-full overflow-hidden 
         ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
       onMouseDown={handleMouseDown}
@@ -127,10 +128,10 @@ const CenterCarousel = () => {
                 src={image.src}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full aspect-auto
-                object-cover rounded-lg shadow-2xl shadow-gray-800"
+                object-cover rounded-lg shadow-2xl shadow-gray-800 aspect-auto"
                 draggable="false"
               />
-                           <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] md:scale-[1]
+                           {/* <div className="absolute bottom-0 left-0 xxsm:scale-[0.6] md:scale-[1]
                            xxsm:-translate-x-[30%] md:-translate-x-[30%] 
                 xxsm:-translate-y-[-50%] md:translate-y-[20%]
                 translate-y-[80%]
@@ -146,7 +147,7 @@ const CenterCarousel = () => {
                 <p className="relative text-gray-900/80 text-xs sm:text-sm max-w-md">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
                 </p>
-              </div>
+              </div> */}
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60 rounded-lg" />
           </div>
