@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { MapPin, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 const Loc = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
@@ -95,6 +96,11 @@ const Loc = () => {
                 <span>1.5 kms</span>
               </span>
             </p>
+            <Link href='https://www.google.com/maps?q=26.7525181,80.9719289'
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="View location on Google Maps"
+            >
             <button
               ref={buttonRef}
               className="group flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 sm:px-6 sm:py-3 
@@ -103,6 +109,7 @@ const Loc = () => {
               <span>View Location</span>
               <ArrowRight className="w-4 h-4 arrow transition-transform" />
             </button>
+            </Link>
           </div>
         </div>
       </div>
