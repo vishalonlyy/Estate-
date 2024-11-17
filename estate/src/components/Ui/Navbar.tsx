@@ -294,10 +294,10 @@ About us
               Enquiry Now
             </button>
             <div className="flex space-x-4 justify-center">
-              <a href="tel:+1234567890" className="hover:text-emerald-600 transition-colors">
+              <a href="tel:+91 9559854111" className="hover:text-emerald-600 transition-colors">
                 <Phone className="w-5 h-5" />
               </a>
-              <a href="mailto:info@example.com" className="hover:text-emerald-600 transition-colors">
+              <a href="mailto:teamshauryainfrazone@gmail.com" className="hover:text-emerald-600 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
