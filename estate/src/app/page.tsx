@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import Group from "@/components/p/Group";
@@ -9,6 +10,7 @@ import { Building, Shield, Sprout, Home as H, Maximize } from "lucide-react";
 import React, { useLayoutEffect, useState } from "react";
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import ConstrctLayout from "@/components/p/constrctLayout";
 interface ImageData {
   id: string;
   url: string;
@@ -106,6 +108,7 @@ const Exclusive_Features = () => {
         bg-no-repeat">
           <h1 className="text-2xl text-black xxsm:text-2xl sm:text-3xl font-bold text-center  py-4 sm:py-8">
             Exclusive Features</h1>
+            {/* <Features/> */}
       </div>
     </>
   );
@@ -152,9 +155,95 @@ const Features = () => {
     </>
   )
 }
+
+
+const Combined_Exclusive_Features = () => {
+  return (
+    <div className="mt-[20px] bg-[url('/i/c.png')] 
+        bg-cover 
+        bg-center 
+        bg-no-repeat">
+      <h1 className="text-2xl xxsm:text-2xl sm:text-3xl font-bold text-center py-4 sm:py-8 text-black">
+        Exclusive Features
+      </h1>
+      
+      <div className="relative bg-[url('/i/c.png')] 
+        bg-cover 
+        bg-center 
+        bg-no-repeat">
+        {/* Background Image */}
+        <div className="absolute inset-0 
+        bg-[url('/i/c.png')] 
+        bg-cover 
+        bg-center 
+        bg-no-repeat
+ 
+          " // Reduced opacity for better text visibility
+        />
+        
+        {/* Features Content */}
+        <div className="relative z-10 py-16 bg-emerald-800 text-white "
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
+              {[
+                {
+                  icon: <Maximize />,
+                  title: "Three side open",
+                  description: "Maximum natural light and ventilation",
+                },
+                {
+                  icon: <Sprout />,
+                  title: "Lavish greenery",
+                  description: "Landscaped gardens and parks",
+                },
+                {
+                  icon: <Building />,
+                  title: "Modern amenities",
+                  description: "State-of-the-art facilities",
+                },
+                {
+                  icon: <H />,
+                  title: "Luxurious homes",
+                  description: "Premium finishes and materials",
+                },
+                {
+                  icon: <Shield />,
+                  title: "Multi layer Security",
+                  description: "24x7 surveillance and monitoring",
+                },
+              ].map((feature, index) => (
+                <div 
+                  key={index}
+                  className="backdrop-blur-sm bg-white/10 p-6 rounded-xl
+                    border border-white/20 shadow-xl
+                    transform transition-all duration-300 
+                    hover:bg-white/20 hover:scale-105"
+                >
+                  <div className="text-emerald-500 w-12 h-12 mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
-const videoId = "1KtK5iMGb4DomdtAML2xLgevp5nBvXw-z";
+const videoId = "1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U";
+// https://drive.google.com/file/d/1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U/view?usp=drivesdk
 
   return (
     <main className="min-h-screen bg-white overflow-hidden relative">
@@ -212,12 +301,21 @@ const videoId = "1KtK5iMGb4DomdtAML2xLgevp5nBvXw-z";
           </div>
     </div>
     <div className="xxsm:mt-[100px] md:mt-[0px]">
-    <Exclusive_Features/>
+      <Combined_Exclusive_Features/>
+    {/* <Exclusive_Features/> */}
     </div>
-    <Features/>
+    {/* <Features/> */}
       {/* Features Section */}
       <Part />
       <div>
+      <div className="bg-[#065f46] transform md:translate-y-16 rounded-t-3xl pb-3">
+          <h1 className="text-2xl xxsm:text-2xl sm:text-3xl font-bold text-center text-white py-2 sm:py-8">Walk Through</h1>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 text-white text-xs sm:text-base md:text-lg">
+            Luxury space is ready to give a lot of the lifestyle and comfort to its residents. Experience the perfect blend of comfort and sophistication in every corner
+            </p>
+          </div>
+        </div>
       <div className="xxsm:min-h-[100%] md:max-h-[70%] relative cursor-pointer" 
        onClick={() => setShowVideo(true)}>
     {!showVideo ? (
@@ -242,22 +340,10 @@ const videoId = "1KtK5iMGb4DomdtAML2xLgevp5nBvXw-z";
       />
     )}
   </div>
-        <div className="bg-[#065f46] transform md:-translate-y-10 pb-3 rounded-b-3xl">
-          <h1 className="text-2xl xxsm:text-2xl sm:text-3xl font-bold text-center text-white py-4 sm:py-8">Walk Through</h1>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 text-white text-xs sm:text-base md:text-lg">
-              Luxury space is ready to give a lot of the lifestyle and comfort to
-              its residents. Experience the perfect blend of comfort and
-              sophistication in every corner. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque labore, in eaque iusto culpa nesciunt ipsa provident sed porro et similique repellat pariatur eum omnis at. Iusto aliquid voluptatibus natus?
-            </p>
-          </div>
-        </div>
+    {/**O */}
       </div>
       {/* Next */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-[url('/img/mapbg.png')] bg-cover bg-center opacity-[0.9] blur-sm"></div>
-        <img src='/img/map.png' alt='map' className='relative w-full h-full object-cover justify-self-center xxsm:scale-[0.8] sm:scale-[0.75] md:scale-[0.5]' />
-      </div>
+      <ConstrctLayout/>
       {/* Group */}
       <Group />
       <Testimonials />

@@ -72,12 +72,27 @@ const Loc = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black">
               At The Heart of Modern Lucknow
             </h1>
-            <p className="text-gray-600 leading-relaxed">
-            Hazaratganj - 9 kms
-Charbagh Railway Station - 12 kms
-Gomti Nagar Railway Station - 7 kms
-Shaheed Path 1.5 kms
-S.G.P.G.I. 1.5 kms
+            <p className="text-gray-600 leading-relaxed flex flex-col">
+              <span className="flex items-center space-x-1">
+                <span className="font-semibold">Hazratganj:</span>
+                <span>9 kms</span>
+              </span>
+              <span className="flex items-center space-x-1">
+                <span className="font-semibold">Charbagh Railway Station:</span>
+                <span>12 kms</span>
+              </span>
+              <span className="flex items-center space-x-1">
+                <span className="font-semibold">Gomti Nagar Railway Station:</span>
+                <span>7 kms</span>
+              </span>
+              <span className="flex items-center space-x-1">
+                <span className="font-semibold">Shaheed Path:</span>
+                <span>1.5 kms</span>
+              </span>
+              <span className="flex items-center space-x-1">
+                <span className="font-semibold">S.G.P.G.I.:</span>
+                <span>1.5 kms</span>
+              </span>
             </p>
             <button
               ref={buttonRef}

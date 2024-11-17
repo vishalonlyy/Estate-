@@ -4,12 +4,17 @@ import { Phone, Mail, Menu, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 
+interface FormProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
   const tlRef = useRef<gsap.core.Timeline>();
   const mobileMenuRef = useRef(null);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   /**
    * Home
 Features
@@ -107,10 +112,102 @@ About us
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+
+
+
+
+  
+  const Forms = ({ isOpen, onClose }: FormProps) => {
+    if (!isOpen) return null;
+  
+    return (
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 mt-[25px]">
+        <div className="relative bg-white/90 backdrop-blur-md rounded-xl p-6 w-full max-w-md shadow-xl border border-white/20">
+          {/* Close Button */}
+          <button 
+            onClick={onClose}
+            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+  
+          {/* Title */}
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Enquire Form</h2>
+  
+          {/* Form */}
+          <form className="space-y-4">
+            {/* Name Field */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input 
+                type="text"
+                placeholder="Enter Your Name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+            </div>
+  
+            {/* Email Field */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input 
+                type="email"
+                placeholder="Enter Your Email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+            </div>
+  
+            {/* Mobile Field */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Mobile</label>
+              <input 
+                type="tel"
+                placeholder="Enter Your Mobile Number"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+            </div>
+  
+            {/* Message Box */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea 
+                placeholder="Your Message"
+                rows={4}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+            </div>
+  
+            {/* Checkbox */}
+            <div className="flex items-center gap-2">
+              <input 
+                type="checkbox"
+                id="promotions"
+                className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+              />
+              <label htmlFor="promotions" className="text-sm text-gray-600">
+                Yes, I would like to receive updates & promotions
+              </label>
+            </div>
+  
+            {/* Submit Button */}
+            <button 
+              type="submit"
+              className="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
+            <Forms isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
       <nav ref={navRef} className="fixed top-0 w-full z-50 bg-white text-black h-[60px]">
+      
         <div className="max-w-[100%] mx-auto px-4 sm:px-6 lg:px-8 py-2 pt-0">
+
           <div className={`${!isScrolled && "transform -translate-y-2"} flex items-center justify-between`}>
             {/* Logo */}
             <div className="flex-shrink-0">
@@ -158,9 +255,12 @@ About us
               </div>
               <div className="hidden md:flex items-center space-x-4">
                 {isScrolled ? (
-                  <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
-                    Enquiry Now
-                  </button>
+                        <button 
+                        onClick={() => setIsFormOpen(true)}
+                        className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
+                      >
+                        Enquiry Now
+                      </button>
                 ) : (
                   <>
                     <a href="tel:+1234567890" className="hover:text-emerald-600 transition-colors">

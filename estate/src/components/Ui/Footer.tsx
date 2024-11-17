@@ -78,7 +78,8 @@ export default function Footer() {
           <div className="flex flex-col gap-6 mb-8">
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-gray-300" />
-              <p className="text-gray-200">123 Business District, City, State - 123456</p>
+              <p className="text-gray-200">GH-05, Sector -14 Vrindavan Yojna
+              Socials</p>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-gray-300" />
@@ -111,7 +112,7 @@ export default function Footer() {
           <div className="footer-section mt-12 pt-8 border-t border-gray-600">
             <h3 className="text-lg font-semibold mb-3">Disclaimer</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              All information, plans, layouts, drawings, visuals, images and amenities depicted herein are indicative and for representational purposes only. The same are subject to change in accordance with the final approvals from concerned authorities. All products, company names, brand names, trademarks and logos are the property of their respective owners.
+            PS Apartment RERA No. UPRERAPRJ103248/16/2024 is being constructed by TEAM SHAURYA INFRAZONE PVT LTD, with 2.5 BHK and 3 BHK  Apartments in Sector 14, Vrindavan Yojna, Lucknow wherein as on 17th November 2024 the configuration, image and views shown/claimed in this advertisement is to give an idea of the manner of utilization of the constructed space and is not a legally enforceable offering by the Company. This advertisement is only for the purpose of providing information. By viewing this advertisement, the viewer confirms that the information contained is solely for informational and advertisement purposes and the viewer has not relied on this information for making any booking/purchase/investments in any project of the company. Nothing in this advertisement constitutes advertising, marketing, booking, selling, or an offer for sale, or invitation to purchase a unit in any project by the company. The company is not liable for any consequence of any action taken by the viewer relying on such material/information in this advertisement. This advertisement is not a legal offering and does not form part of any agreement or is legally binding on the part of the company or any nominated agency.
             </p>
           </div>
         </div>

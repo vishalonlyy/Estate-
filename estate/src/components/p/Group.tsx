@@ -13,10 +13,10 @@ interface CardData {
 }
 
 const cardData: CardData[] = [
-  { id: 1, number: "100+", description: "Years of Excellence in Real Estate Development" },
-  { id: 2, number: "50K+", description: "Satisfied Customers Across the Globe" },
-  { id: 3, number: "200+", description: "Award-Winning Projects Completed" },
-  { id: 4, number: "25+", description: "Countries with Our Presence" }
+  { id: 1, number: "20+", description: "Years of Excellence in Real Estate Development" },
+  { id: 2, number: "1000+", description: "Satisfied Customers Across the Globe" },
+  { id: 3, number: "5+", description: "Award winnig projects completed" },
+  { id: 4, number: "5+", description: "Cities with our presence" }
 ];
 
 
@@ -56,17 +56,40 @@ const Group = () => {
 
    return (
     <div className="relative mb-[10%]">
-          <div className="about-section max-w-7xl mx-auto px-4 py-16 sm:py-24">
-            <h2 className="about-title text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-              About Us
-            </h2>
-            <p className="about-text text-base xxsm:text-sm sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto text-center leading-relaxed">
-              Founded by a team of young and dynamic entrepreneurs with over 20 years of combined experience, 
-              our company is built on a foundation of quality, trust, and commitment. We bring a fresh 
-              perspective to the real estate industry, combining innovative ideas with a deep understanding 
-              of the market. Our focus is on delivering high-quality residential, commercial, and industrial 
-              projects that meet the evolving needs of modern buyers and investors.
-            </p>
+                    <div className="about-section  relative md:max-w-7xl mx-auto px-4 py-16 sm:py-24 overflow-hidden">
+            {/* Decorative background elements */}
+            <div className="absolute inset-0 opacity-5 ">
+              <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
+              <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2" />
+            </div>
+          
+            {/* Content container with glass effect */}
+            <div className="relative backdrop-blur-sm  rounded-2xl 
+            xxsm:p-0 xsm:p-0 p-8 sm:p-12  border-white/20">
+              {/* Decorative icon */}
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+              </div>
+          
+              <h2 className="about-title text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center">
+                About Us
+              </h2>
+          
+              {/* Decorative line */}
+              <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
+          
+              <p className="about-text text-base xxsm:text-sm sm:text-lg md:text-xl text-gray-700 xxsm:w-[100%] md:max-w-4xl mx-auto text-center leading-relaxed">
+                Founded by a team of young and dynamic entrepreneurs with over <span className="font-semibold text-emerald-600">20 years</span> of combined experience, 
+                our company is built on a foundation of <span className="font-semibold text-emerald-600">quality</span>, <span className="font-semibold text-emerald-600">trust</span>, and <span className="font-semibold text-emerald-600">commitment</span>. We bring a fresh 
+                perspective to the real estate industry, combining innovative ideas with a deep understanding 
+                of the market. Our focus is on delivering high-quality residential, commercial, and industrial 
+                projects that meet the evolving needs of modern buyers and investors.
+              </p>
+            </div>
           </div>
       <div className="relative h-[100%] w-full">
         <img
