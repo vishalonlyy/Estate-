@@ -9,8 +9,12 @@ import Navbar from "@/components/Ui/Navbar";
 import { Building, Shield, Sprout, Home as H, Maximize } from "lucide-react";
 import React, { useLayoutEffect, useState } from "react";
 import { useEffect, useRef } from 'react';
+import { Download, Calendar } from 'lucide-react';
+
 import { gsap } from 'gsap';
 import ConstrctLayout from "@/components/p/constrctLayout";
+import BrochureForm from "@/components/forms/Brochure";
+import SiteVisitForm from "@/components/forms/Visit";
 interface ImageData {
   id: string;
   url: string;
@@ -240,13 +244,81 @@ const Combined_Exclusive_Features = () => {
 };
 
 
+type ButtonLink = {
+  title: string;
+  function: JSX.Element;
+  icon: JSX.Element;
+}
+
+
+
 export default function Home() {
+  const [isOpen, setISOpen] = useState(false);
+  const [visitOpen, setVisitOpen] = useState(false);
+  const SideButtons = () => {
+    const buttons: ButtonLink[] = [
+      {
+        title: "Download Brochure",
+        function: <BrochureForm isOpen={isOpen} onClose={
+          () => setISOpen(false)
+        } />,
+        icon: <Download className="w-5 h-5" />
+      },
+      {
+        title: "Schedule Site Visit",
+        function: <SiteVisitForm isOpen={visitOpen} onClose={
+          () => setVisitOpen(false)
+        } />, 
+        icon: <Calendar className="w-5 h-5" />
+      }
+    ];
+  
+    return (
+      <div className="flex flex-row-reverse flex-row gap-4 p-4 -rotate-90 translate-x-[45%] ">
+        {buttons.map((button, index) => (
+          <a
+            key={index}
+            onClick={
+              () => {
+                if (index === 0) {
+                  setISOpen(true);
+                } else {
+                  setVisitOpen(true);
+                }
+              }
+            }
+            className="flex items-center flex-row-reverse gap-3 bg-emerald-800 text-white p-4 rounded-lg 
+              hover:bg-emerald-900 hover:scale-105
+              transition-all duration-300 ease-in-out
+              shadow-lg "
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {button.icon}
+            <span className="font-medium">{button.title}</span>
+          </a>
+        ))}
+      </div>
+    );
+  };
+  
   const [showVideo, setShowVideo] = useState(false);
 const videoId = "1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U";
 // https://drive.google.com/file/d/1jogyU_GWVs6Suqkww7BYMO5DtEkE5l1U/view?usp=drivesdk
 
   return (
     <main className="min-h-screen bg-white overflow-hidden relative">
+      {/**Forms */}
+      <div>
+        <BrochureForm isOpen={isOpen} onClose={() => setISOpen(false)} />
+        <SiteVisitForm isOpen={visitOpen} onClose={() => setVisitOpen(false)} />
+      </div>
+            <div className="translate-y-[45%] h-[100%]
+        fixed right-0 top-0 transform  z-[20] 
+
+      ">
+        <SideButtons/>
+      </div>
       <Navbar />
       <ImageSection/>
     <div className="w-full absolute xxsm:top-[350px] md:top-[600px] z-10 xxsm:scale-x-[1.2] xsm:scale-[1.1] md:scale-x-[1] transform 

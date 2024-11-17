@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="flex items-center gap-[5%] md:w-[40%]  justify-between">
             <div className="w-20 h-20 flex-shrink-0">
               <img 
-                src="https://www.imperialresidencia.com/img/QRCode_gandharva.png" 
+                src="/scanner.jpeg" 
                 alt="QR Scanner"
                 width={80}
                 height={80}
@@ -83,13 +83,13 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-gray-300" />
-              <a href="mailto:contact@example.com" className="text-gray-200 hover:text-white transition-colors">
-                contact@example.com
+              <a href="mailto:teamshauryainfrazone@gmail.com" className="text-gray-200 hover:text-white transition-colors">
+                teamshauryainfrazone@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-gray-300" />
-              <a href="tel:+1234567890" className="text-gray-200 hover:text-white transition-colors">
+              <a href="tel:+91 9559854111" className="text-gray-200 hover:text-white transition-colors">
                 +91 9559854111
               </a>
             </div>
