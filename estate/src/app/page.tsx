@@ -287,10 +287,11 @@ export default function Home() {
                 }
               }
             }
-            className="flex items-center flex-row-reverse gap-3 bg-emerald-800 text-white p-4 rounded-lg 
+            className="flex items-center flex-row-reverse gap-3 bg-emerald-800
+             text-white p-2 xxsm:p-1 md:p-4 rounded-lg 
               hover:bg-emerald-900 hover:scale-105
               transition-all duration-300 ease-in-out
-              shadow-lg "
+              shadow-lg xxsm:text-xs sm:text-sm md:text-base xxsm:w-[150px] md:w-auto"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -283,10 +283,12 @@ About us
         className="fixed top-[60px] h-full left-0 w-full bg-white z-40 transform -translate-y-full shadow-lg md:hidden"
       >
         <div className="p-4 space-y-4 text-gray-700">
+          <div className="flex flex-col gap-4  items-center">
           {Links.map((link) => (
             <a key={link.id} href
             ={link.url} className="hover:text-emerald-600 transition-colors">{link.name}</a>
           ))}
+          </div>
           <div className="pt-4 flex flex-col space-y-4">
             <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
               Enquiry Now
