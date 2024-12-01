@@ -230,7 +230,9 @@ function Navbar() {
 ))}
           </div>
           <div className="pt-4 flex flex-col space-y-4">
-            <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+            <button 
+            onClick={() => setIsFormOpen(true)}
+            className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
               Enquiry Now
             </button>
             <div className="flex space-x-4 justify-center">
