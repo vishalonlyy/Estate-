@@ -78,8 +78,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6 mb-8">
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-gray-300" />
-              <p className="text-gray-200">GH-05, Sector -14 Vrindavan Yojna
-              Socials</p>
+              <p className="text-gray-200">GH-05, Sector -14 Vrindavan Yojna</p>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-gray-300" />
